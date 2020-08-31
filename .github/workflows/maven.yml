@@ -20,7 +20,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-        repo-token: ${{ secrets.GITHUB_TOKEN }}  
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+        GITHUB_ACTOR: elbert80
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: echo2
