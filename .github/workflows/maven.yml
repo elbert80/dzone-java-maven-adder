@@ -22,5 +22,9 @@ jobs:
         java-version: 11
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: echo1
+      run: echo GH_TOKEN
+    - name: echo2
+      run: echo GITHUB_TOKEN
     - name: Deploy
       run: mvn deploy -Dregistry=https://maven.pkg.github.com/elbert80 -Dtoken=GH_TOKEN
