@@ -30,4 +30,4 @@ jobs:
       run: echo $GITHUB_TOKEN
       
     - name: Deploy
-      run: mvn -B deploy -Dregistry=https://maven.pkg.github.com/elbert80 
+      run: mvn -B deploy # -Dregistry=https://maven.pkg.github.com/elbert80 
