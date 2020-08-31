@@ -20,11 +20,16 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
-        GITHUB_ACTOR: elbert80
+        
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: echo2
       run: echo $GITHUB_TOKEN
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+        GITHUB_ACTOR: elbert80
     - name: Deploy
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/elbert80 -Dtoken=$GITHUB_TOKEN
+      run: mvn -B deploy -Dregistry=https://maven.pkg.github.com/elbert80 
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+        GITHUB_ACTOR: elbert80
