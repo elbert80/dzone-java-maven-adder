@@ -27,4 +27,4 @@ jobs:
     - name: echo2
       run: echo $GITHUB_TOKEN
     - name: Deploy
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/elbert80 -Dtoken=GH_TOKEN
+      run: mvn deploy -Dregistry=https://maven.pkg.github.com/elbert80 -Dtoken=${{ secrets.GITHUB_TOKEN }}
