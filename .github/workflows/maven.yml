@@ -27,7 +27,7 @@ jobs:
       run: mvn -B package --file pom.xml
       
     - name: echo2
-      run: echo $GITHUB_ACTOR
+      run: echo $GITHUB_TOKEN
       
     - name: Deploy
       run: mvn -B deploy -Dregistry=https://maven.pkg.github.com/elbert80 
